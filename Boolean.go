@@ -19,105 +19,52 @@ func Parse(s string) bool {
 	return f == n
 }
 
-// parse : String -> Bool
-// parse s =
-// let fal = contains (regex "(negati|never|refus|wrong|fal|off)|\\b(f|n|0)\\b") s
-// 		neg = modBy 2 (length (find (regex "\\b(nay|nah|no|dis|un|in)") s)) == 1 in
-// not (xor fal neg)
+/// NOT, EQ, NEQ, IMPLY, NIMPLY (FIXED)
+
+// Check if value is false.
+//
+// a: a boolean
+func Not(a bool) bool {
+	return !a
+}
+
+// Check if antecedent ⇔ consequent (a ⇔ b).
+//
+// a: antecedent
+//
+// b: consequent
+func Eq(a bool, b bool) bool {
+	return a == b
+}
+
+// Check if antecedent ⇎ consequent (a ⇎ b).
+//
+// a: antecedent
+//
+// b: consequent
+func Neq(a bool, b bool) bool {
+	return a != b
+}
+
+// Check if antecedent ⇒ consequent (a ⇒ b).
+//
+// a: antecedent
+//
+// b: consequent
+func Imply(a bool, b bool) bool {
+	return !a || b
+}
+
+// Check if antecedent ⇏ consequent (a ⇏ b).
+//
+// a: antecedent
+//
+// b: consequent
+func Nimply(a bool, b bool) bool {
+	return !Imply(a, b)
+}
 
 /*
-import Regex exposing (Regex, fromStringWith, contains, find)
-import Maybe exposing (withDefault)
-import List exposing (length)
-
-
-
-
-regex : String -> Regex
-regex s =
-withDefault Regex.never <| fromStringWith {multiline = False, caseInsensitive = True} s
-
-
-
-
--- NOT, EQ, NEQ, IMPLY, NIMPLY (FIXED)
-{-|
-Check if value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/not)
-	-- not a
-	-- a: a boolean
-	not False == True
-	not True  == False
--}
-not : Bool -> Bool
-not = Basics.not
-
-
-{-|
-Check if antecedent ⇔ consequent (a ⇔ b).
-[📘](https://github.com/elmw/extra-boolean/wiki/eq)
-	-- eq a b
-	-- a: antecedent
-	-- b: consequent
-	eq True True   == True
-	eq False False == True
-	eq True False  == False
-	eq False True  == False
--}
-eq : Bool -> Bool -> Bool
-eq = xnor2
-
-
-{-|
-Check if antecedent ⇎ consequent (a ⇎ b).
-[📘](https://github.com/elmw/extra-boolean/wiki/neq)
-	-- neq a b
-	-- a: antecedent
-	-- b: consequent
-	neq True False  == True
-	neq False True  == True
-	neq True True   == False
-	neq False False == False
--}
-neq : Bool -> Bool -> Bool
-neq a b =
-not <| eq a b
-
-
-{-|
-Check if antecedent ⇒ consequent (a ⇒ b).
-[📘](https://github.com/elmw/extra-boolean/wiki/imply)
-	-- imply a b
-	-- a: antecedent
-	-- b: consequent
-	imply True True   == True
-	imply False True  == True
-	imply False False == True
-	imply True False  == False
--}
-imply : Bool -> Bool -> Bool
-imply a b =
-not a || b
-
-
-{-|
-Check if antecedent ⇏ consequent (a ⇏ b).
-[📘](https://github.com/elmw/extra-boolean/wiki/nimply)
-	-- nimply a b
-	-- a: antecedent
-	-- b: consequent
-	nimply True False  == True
-	nimply True True   == False
-	nimply False True  == False
-	nimply False False == False
--}
-nimply : Bool -> Bool -> Bool
-nimply a b =
-not <| imply a b
-
-
-
-
 -- EQV, IMP (SHORTCUTS)
 {-|
 Check if antecedent ⇔ consequent (a ⇔ b).
