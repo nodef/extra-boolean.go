@@ -713,169 +713,159 @@ func Count8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) int 
 	return Count4(a, b, c, d) + Count4(e, f, g, h)
 }
 
+// NAND (VARIABLE)
+
+// Checks if any value is false.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Nand(true, false)              == true
+//  Nand(true, true)               == false
+//  Nand4(true, true, false, true) == true
+//  Nand4(true, true, true, true)  == false
+func Nand(a bool, b bool) bool {
+	return Nand2(a, b)
+}
+
+// Checks if any value is false.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Nand(true, false)              == true
+//  Nand(true, true)               == false
+//  Nand4(true, true, false, true) == true
+//  Nand4(true, true, true, true)  == false
+func Nand0() bool {
+	return !And0()
+}
+
+// Checks if any value is false.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Nand(true, false)              == true
+//  Nand(true, true)               == false
+//  Nand4(true, true, false, true) == true
+//  Nand4(true, true, true, true)  == false
+func Nand1(a bool) bool {
+	return !And1(a)
+}
+
+// Checks if any value is false.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Nand(true, false)              == true
+//  Nand(true, true)               == false
+//  Nand4(true, true, false, true) == true
+//  Nand4(true, true, true, true)  == false
+func Nand2(a bool, b bool) bool {
+	return !And2(a, b)
+}
+
+// Checks if any value is false.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Nand(true, false)              == true
+//  Nand(true, true)               == false
+//  Nand4(true, true, false, true) == true
+//  Nand4(true, true, true, true)  == false
+func Nand3(a bool, b bool, c bool) bool {
+	return !And3(a, b, c)
+}
+
+// Checks if any value is false.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Nand(true, false)              == true
+//  Nand(true, true)               == false
+//  Nand4(true, true, false, true) == true
+//  Nand4(true, true, true, true)  == false
+func Nand4(a bool, b bool, c bool, d bool) bool {
+	return !And4(a, b, c, d)
+}
+
+// Checks if any value is false.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Nand(true, false)              == true
+//  Nand(true, true)               == false
+//  Nand4(true, true, false, true) == true
+//  Nand4(true, true, true, true)  == false
+func Nand5(a bool, b bool, c bool, d bool, e bool) bool {
+	return !And5(a, b, c, d, e)
+}
+
+// Checks if any value is false.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Nand(true, false)              == true
+//  Nand(true, true)               == false
+//  Nand4(true, true, false, true) == true
+//  Nand4(true, true, true, true)  == false
+func Nand6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
+	return !And6(a, b, c, d, e, f)
+}
+
+// Checks if any value is false.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Nand(true, false)              == true
+//  Nand(true, true)               == false
+//  Nand4(true, true, false, true) == true
+//  Nand4(true, true, true, true)  == false
+func Nand7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
+	return !And7(a, b, c, d, e, f, g)
+}
+
+// Checks if any value is false.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Nand(true, false)              == true
+//  Nand(true, true)               == false
+//  Nand4(true, true, false, true) == true
+//  Nand4(true, true, true, true)  == false
+func Nand8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
+	return !And8(a, b, c, d, e, f, g, h)
+}
+
 /*
--- NAND (VARIABLE)
-{-|
-Checks if any value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/nand)
-	-- nand[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	nand True False            == True
-	nand True True             == False
-	nand4 True True False True == True
-	nand4 True True True True  == False
--}
-nand : Bool -> Bool -> Bool
-nand = nand2
-
-
-{-|
-Checks if any value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/nand)
-	-- nand[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	nand True False            == True
-	nand True True             == False
-	nand4 True True False True == True
-	nand4 True True True True  == False
--}
-nand0 : Bool
-nand0 =
-not <| and0
-
-
-{-|
-Checks if any value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/nand)
-	-- nand[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	nand True False            == True
-	nand True True             == False
-	nand4 True True False True == True
-	nand4 True True True True  == False
--}
-nand1 : Bool -> Bool
-nand1 a =
-not <| and1 a
-
-
-{-|
-Checks if any value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/nand)
-	-- nand[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	nand True False            == True
-	nand True True             == False
-	nand4 True True False True == True
-	nand4 True True True True  == False
--}
-nand2 : Bool -> Bool -> Bool
-nand2 a b =
-not <| and2 a b
-
-
-{-|
-Checks if any value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/nand)
-	-- nand[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	nand True False            == True
-	nand True True             == False
-	nand4 True True False True == True
-	nand4 True True True True  == False
--}
-nand3 : Bool -> Bool -> Bool -> Bool
-nand3 a b c =
-not <| and3 a b c
-
-
-{-|
-Checks if any value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/nand)
-	-- nand[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	nand True False            == True
-	nand True True             == False
-	nand4 True True False True == True
-	nand4 True True True True  == False
--}
-nand4 : Bool -> Bool -> Bool -> Bool -> Bool
-nand4 a b c d =
-not <| and4 a b c d
-
-
-{-|
-Checks if any value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/nand)
-	-- nand[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	nand True False            == True
-	nand True True             == False
-	nand4 True True False True == True
-	nand4 True True True True  == False
--}
-nand5 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-nand5 a b c d e =
-not <| and5 a b c d e
-
-
-{-|
-Checks if any value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/nand)
-	-- nand[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	nand True False            == True
-	nand True True             == False
-	nand4 True True False True == True
-	nand4 True True True True  == False
--}
-nand6 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-nand6 a b c d e f =
-not <| and6 a b c d e f
-
-
-{-|
-Checks if any value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/nand)
-	-- nand[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	nand True False            == True
-	nand True True             == False
-	nand4 True True False True == True
-	nand4 True True True True  == False
--}
-nand7 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-nand7 a b c d e f g =
-not <| and7 a b c d e f g
-
-
-{-|
-Checks if any value is false.
-[📘](https://github.com/elmw/extra-boolean/wiki/nand)
-	-- nand[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	nand True False            == True
-	nand True True             == False
-	nand4 True True False True == True
-	nand4 True True True True  == False
--}
-nand8 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-nand8 a b c d e f g h =
-not <| and8 a b c d e f g h
-
-
-
-
 -- NOR (VARIABLE)
 {-|
 Checks if all values are false.
