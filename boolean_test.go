@@ -1,8 +1,6 @@
 package boolean
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // PARSE
 
