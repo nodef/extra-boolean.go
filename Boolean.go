@@ -6,11 +6,20 @@ package Boolean
 
 import "regexp"
 
-///  PARSE
+//  PARSE
 
-// Convert string to boolean.
+// Converts string to boolean.
 //
-// s: a string
+// Parameters:
+//  // s: a string
+//
+// Example:
+//  Parse("1")        == true
+//  Parse("truthy")   == true
+//  Parse("not off")  == true
+//  Parse("not true") == false
+//  Parse("inactive") == false
+//  Parse("disabled") == false
 func Parse(s string) bool {
 	var rfalse = regexp.MustCompile(`(negati|never|refus|wrong|fal|off)|\b(f|n|0)\b`)
 	var rnegate = regexp.MustCompile(`\b(nay|nah|no|dis|un|in)`)
@@ -19,412 +28,389 @@ func Parse(s string) bool {
 	return f == n
 }
 
-/// NOT, EQ, NEQ, IMPLY, NIMPLY (FIXED)
+// NOT, EQ, NEQ, IMPLY, NIMPLY (FIXED)
 
-// Check if value is false.
+// Checks if value is false.
 //
-// a: a boolean
+// Parameters:
+//  // a: a boolean
+//
+// Example:
+//  Not(false) == true
+//  Not(true)  == false
 func Not(a bool) bool {
 	return !a
 }
 
-// Check if antecedent ⇔ consequent (a ⇔ b).
+// Checks if antecedent ⇔ consequent (a ⇔ b).
 //
-// a: antecedent
+// Parameters:
+//  // a: antecedent
+//  // b: consequent
 //
-// b: consequent
+// Example:
+//  Eq(true, true)   == true
+//  Eq(false, false) == true
+//  Eq(true, false)  == false
+//  Eq(false, true)  == false
 func Eq(a bool, b bool) bool {
 	return a == b
 }
 
-// Check if antecedent ⇎ consequent (a ⇎ b).
+// Checks if antecedent ⇎ consequent (a ⇎ b).
 //
-// a: antecedent
+// Parameters:
+//  // a: antecedent
+//  // b: consequent
 //
-// b: consequent
+// Example:
+//  Neq(true, false)  == true
+//  Neq(false, true)  == true
+//  Neq(true, true)   == false
+//  Neq(false, false) == false
 func Neq(a bool, b bool) bool {
 	return a != b
 }
 
-// Check if antecedent ⇒ consequent (a ⇒ b).
+// Checks if antecedent ⇒ consequent (a ⇒ b).
 //
-// a: antecedent
+// Parameters:
+//  // a: antecedent
+//  // b: consequent
 //
-// b: consequent
+// Example:
+//  Imply(true, true)   == true
+//  Imply(false, true)  == true
+//  Imply(false, false) == true
+//  Imply(true, false)  == false
 func Imply(a bool, b bool) bool {
 	return !a || b
 }
 
-// Check if antecedent ⇏ consequent (a ⇏ b).
+// Checks if antecedent ⇏ consequent (a ⇏ b).
 //
-// a: antecedent
+// Parameters:
+//  // a: antecedent
+//  // b: consequent
 //
-// b: consequent
+// Example:
+//  Nimply(true, false)  == true
+//  Nimply(true, true)   == false
+//  Nimply(false, true)  == false
+//  Nimply(false, false) == false
 func Nimply(a bool, b bool) bool {
 	return !Imply(a, b)
 }
 
+// AND (VARIABLE)
+
+// Checks if all values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  And(true, true)              == true
+//  And(true, false)             == false
+//  And4(true, true, true, true)  == true
+//  And4(true, false, true, true) == false
+func And(a bool, b bool) bool {
+	return And2(a, b)
+}
+
+// Checks if all values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  And(true, true)              == true
+//  And(true, false)             == false
+//  And4(true, true, true, true)  == true
+//  And4(true, false, true, true) == false
+func And0() bool {
+	return true
+}
+
+// Checks if all values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  And(true, true)              == true
+//  And(true, false)             == false
+//  And4(true, true, true, true)  == true
+//  And4(true, false, true, true) == false
+func And1(a bool) bool {
+	return a
+}
+
+// Checks if all values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  And(true, true)              == true
+//  And(true, false)             == false
+//  And4(true, true, true, true)  == true
+//  And4(true, false, true, true) == false
+func And2(a bool, b bool) bool {
+	return a && b
+}
+
+// Checks if all values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  And(true, true)              == true
+//  And(true, false)             == false
+//  And4(true, true, true, true)  == true
+//  And4(true, false, true, true) == false
+func And3(a bool, b bool, c bool) bool {
+	return a && b && c
+}
+
+// Checks if all values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  And(true, true)              == true
+//  And(true, false)             == false
+//  And4(true, true, true, true)  == true
+//  And4(true, false, true, true) == false
+func And4(a bool, b bool, c bool, d bool) bool {
+	return a && b && c && d
+}
+
+// Checks if all values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  And(true, true)              == true
+//  And(true, false)             == false
+//  And4(true, true, true, true)  == true
+//  And4(true, false, true, true) == false
+func And5(a bool, b bool, c bool, d bool, e bool) bool {
+	return a && b && c && d && e
+}
+
+// Checks if all values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  And(true, true)              == true
+//  And(true, false)             == false
+//  And4(true, true, true, true)  == true
+//  And4(true, false, true, true) == false
+func And6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
+	return a && b && c && d && e && f
+}
+
+// Checks if all values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  And(true, true)              == true
+//  And(true, false)             == false
+//  And4(true, true, true, true)  == true
+//  And4(true, false, true, true) == false
+func And7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
+	return a && b && c && d && e && f && g
+}
+
+// Checks if all values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  And(true, true)              == true
+//  And(true, false)             == false
+//  And4(true, true, true, true)  == true
+//  And4(true, false, true, true) == false
+func And8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
+	return a && b && c && d && e && f && g && h
+}
+
+// OR (VARIABLE)
+
+// Checks if any value is true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Or(true, false)                == true
+//  Or(false, false)               == false
+//  Or4(false, true, false, true)   == true
+//  Or4(false, false, false, false) == false
+func Or(a bool, b bool) bool {
+	return Or2(a, b)
+}
+
+// Checks if any value is true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Or(true, false)                == true
+//  Or(false, false)               == false
+//  Or4(false, true, false, true)   == true
+//  Or4(false, false, false, false) == false
+func Or0() bool {
+	return false
+}
+
+// Checks if any value is true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Or(true, false)                == true
+//  Or(false, false)               == false
+//  Or4(false, true, false, true)   == true
+//  Or4(false, false, false, false) == false
+func Or1(a bool) bool {
+	return a
+}
+
+// Checks if any value is true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Or(true, false)                == true
+//  Or(false, false)               == false
+//  Or4(false, true, false, true)   == true
+//  Or4(false, false, false, false) == false
+func Or2(a bool, b bool) bool {
+	return a || b
+}
+
+// Checks if any value is true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Or(true, false)                == true
+//  Or(false, false)               == false
+//  Or4(false, true, false, true)   == true
+//  Or4(false, false, false, false) == false
+func Or3(a bool, b bool, c bool) bool {
+	return a || b || c
+}
+
+// Checks if any value is true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Or(true, false)                == true
+//  Or(false, false)               == false
+//  Or4(false, true, false, true)   == true
+//  Or4(false, false, false, false) == false
+func Or4(a bool, b bool, c bool, d bool) bool {
+	return a || b || c || d
+}
+
+// Checks if any value is true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Or(true, false)                == true
+//  Or(false, false)               == false
+//  Or4(false, true, false, true)   == true
+//  Or4(false, false, false, false) == false
+func Or5(a bool, b bool, c bool, d bool, e bool) bool {
+	return a || b || c || d || e
+}
+
+// Checks if any value is true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Or(true, false)                == true
+//  Or(false, false)               == false
+//  Or4(false, true, false, true)   == true
+//  Or4(false, false, false, false) == false
+func Or6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
+	return a || b || c || d || e || f
+}
+
+// Checks if any value is true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Or(true, false)                == true
+//  Or(false, false)               == false
+//  Or4(false, true, false, true)   == true
+//  Or4(false, false, false, false) == false
+func Or7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
+	return a || b || c || d || e || f || g
+}
+
+// Checks if any value is true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Or(true, false)                == true
+//  Or(false, false)               == false
+//  Or4(false, true, false, true)   == true
+//  Or4(false, false, false, false) == false
+func Or8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
+	return a || b || c || d || e || f || g || h
+}
+
 /*
--- EQV, IMP (SHORTCUTS)
-{-|
-Check if antecedent ⇔ consequent (a ⇔ b).
-[📘](https://github.com/elmw/extra-boolean/wiki/eqv)
-	-- eqv a b
-	-- a: antecedent
-	-- b: consequent
-	eqv True True   == True
-	eqv False False == True
-	eqv True False  == False
-	eqv False True  == False
--}
-eqv : Bool -> Bool -> Bool
-eqv = eq
-
-
-{-|
-Check if antecedent ⇒ consequent (a ⇒ b).
-[📘](https://github.com/elmw/extra-boolean/wiki/imp)
-	-- imp a b
-	-- a: antecedent
-	-- b: consequent
-	imp True True   == True
-	imp False True  == True
-	imp False False == True
-	imp True False  == False
--}
-imp : Bool -> Bool -> Bool
-imp = imply
-
-
-
-
--- AND (VARIABLE)
-{-|
-Check if all values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/and)
-	-- and[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	and True True             == True
-	and True False            == False
-	and4 True True True True  == True
-	and4 True False True True == False
--}
-and : Bool -> Bool -> Bool
-and = and2
-
-
-{-|
-Check if all values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/and)
-	-- and[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	and True True             == True
-	and True False            == False
-	and4 True True True True  == True
-	and4 True False True True == False
--}
-and0 : Bool
-and0 =
-True
-
-
-{-|
-Check if all values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/and)
-	-- and[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	and True True             == True
-	and True False            == False
-	and4 True True True True  == True
-	and4 True False True True == False
--}
-and1 : Bool -> Bool
-and1 a =
-a
-
-
-{-|
-Check if all values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/and)
-	-- and[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	and True True             == True
-	and True False            == False
-	and4 True True True True  == True
-	and4 True False True True == False
--}
-and2 : Bool -> Bool -> Bool
-and2 a b =
-a && b
-
-
-{-|
-Check if all values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/and)
-	-- and[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	and True True             == True
-	and True False            == False
-	and4 True True True True  == True
-	and4 True False True True == False
--}
-and3 : Bool -> Bool -> Bool -> Bool
-and3 a b c =
-a && b && c
-
-
-{-|
-Check if all values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/and)
-	-- and[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	and True True             == True
-	and True False            == False
-	and4 True True True True  == True
-	and4 True False True True == False
--}
-and4 : Bool -> Bool -> Bool -> Bool -> Bool
-and4 a b c d =
-a && b && c && d
-
-
-{-|
-Check if all values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/and)
-	-- and[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	and True True             == True
-	and True False            == False
-	and4 True True True True  == True
-	and4 True False True True == False
--}
-and5 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-and5 a b c d e =
-a && b && c && d && e
-
-
-{-|
-Check if all values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/and)
-	-- and[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	and True True             == True
-	and True False            == False
-	and4 True True True True  == True
-	and4 True False True True == False
--}
-and6 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-and6 a b c d e f =
-a && b && c && d && e && f
-
-
-{-|
-Check if all values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/and)
-	-- and[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	and True True             == True
-	and True False            == False
-	and4 True True True True  == True
-	and4 True False True True == False
--}
-and7 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-and7 a b c d e f g =
-a && b && c && d && e && f && g
-
-
-{-|
-Check if all values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/and)
-	-- and[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	and True True             == True
-	and True False            == False
-	and4 True True True True  == True
-	and4 True False True True == False
--}
-and8 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-and8 a b c d e f g h =
-a && b && c && d && e && f && g && h
-
-
-
-
--- OR (VARIABLE)
-{-|
-Check if any value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/or)
-	-- or[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	or True False               == True
-	or False False              == False
-	or4 False True False True   == True
-	or4 False False False False == False
--}
-or : Bool -> Bool -> Bool
-or = and2
-
-
-{-|
-Check if any value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/or)
-	-- or[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	or True False               == True
-	or False False              == False
-	or4 False True False True   == True
-	or4 False False False False == False
--}
-or0 : Bool
-or0 =
-False
-
-
-{-|
-Check if any value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/or)
-	-- or[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	or True False               == True
-	or False False              == False
-	or4 False True False True   == True
-	or4 False False False False == False
--}
-or1 : Bool -> Bool
-or1 a =
-a
-
-
-{-|
-Check if any value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/or)
-	-- or[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	or True False               == True
-	or False False              == False
-	or4 False True False True   == True
-	or4 False False False False == False
--}
-or2 : Bool -> Bool -> Bool
-or2 a b =
-a || b
-
-
-{-|
-Check if any value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/or)
-	-- or[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	or True False               == True
-	or False False              == False
-	or4 False True False True   == True
-	or4 False False False False == False
--}
-or3 : Bool -> Bool -> Bool -> Bool
-or3 a b c =
-a || b || c
-
-
-{-|
-Check if any value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/or)
-	-- or[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	or True False               == True
-	or False False              == False
-	or4 False True False True   == True
-	or4 False False False False == False
--}
-or4 : Bool -> Bool -> Bool -> Bool -> Bool
-or4 a b c d =
-a || b || c || d
-
-
-{-|
-Check if any value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/or)
-	-- or[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	or True False               == True
-	or False False              == False
-	or4 False True False True   == True
-	or4 False False False False == False
--}
-or5 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-or5 a b c d e =
-a || b || c || d || e
-
-
-{-|
-Check if any value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/or)
-	-- or[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	or True False               == True
-	or False False              == False
-	or4 False True False True   == True
-	or4 False False False False == False
--}
-or6 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-or6 a b c d e f =
-a || b || c || d || e || f
-
-
-{-|
-Check if any value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/or)
-	-- or[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	or True False               == True
-	or False False              == False
-	or4 False True False True   == True
-	or4 False False False False == False
--}
-or7 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-or7 a b c d e f g =
-a || b || c || d || e || f || g
-
-
-{-|
-Check if any value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/or)
-	-- or[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	or True False               == True
-	or False False              == False
-	or4 False True False True   == True
-	or4 False False False False == False
--}
-or8 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-or8 a b c d e f g h =
-a || b || c || d || e || f || g || h
-
-
-
 
 -- XOR (VARIABLE)
 {-|
-Check if odd no. of values are true.
+Checks if odd no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xor)
 	-- xor[n] a b ...
 	-- a: 1st boolean
@@ -439,7 +425,7 @@ xor = xor2
 
 
 {-|
-Check if odd no. of values are true.
+Checks if odd no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xor)
 	-- xor[n] a b ...
 	-- a: 1st boolean
@@ -455,7 +441,7 @@ False
 
 
 {-|
-Check if odd no. of values are true.
+Checks if odd no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xor)
 	-- xor[n] a b ...
 	-- a: 1st boolean
@@ -471,7 +457,7 @@ a
 
 
 {-|
-Check if odd no. of values are true.
+Checks if odd no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xor)
 	-- xor[n] a b ...
 	-- a: 1st boolean
@@ -486,7 +472,7 @@ xor2 = Basics.xor
 
 
 {-|
-Check if odd no. of values are true.
+Checks if odd no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xor)
 	-- xor[n] a b ...
 	-- a: 1st boolean
@@ -502,7 +488,7 @@ xor2 (xor2 a b) (xor1 c)
 
 
 {-|
-Check if odd no. of values are true.
+Checks if odd no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xor)
 	-- xor[n] a b ...
 	-- a: 1st boolean
@@ -518,7 +504,7 @@ xor2 (xor2 a b) (xor2 c d)
 
 
 {-|
-Check if odd no. of values are true.
+Checks if odd no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xor)
 	-- xor[n] a b ...
 	-- a: 1st boolean
@@ -534,7 +520,7 @@ xor2 (xor4 a b c d) (xor1 e)
 
 
 {-|
-Check if odd no. of values are true.
+Checks if odd no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xor)
 	-- xor[n] a b ...
 	-- a: 1st boolean
@@ -550,7 +536,7 @@ xor2 (xor4 a b c d) (xor2 e f)
 
 
 {-|
-Check if odd no. of values are true.
+Checks if odd no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xor)
 	-- xor[n] a b ...
 	-- a: 1st boolean
@@ -566,7 +552,7 @@ xor2 (xor4 a b c d) (xor3 e f g)
 
 
 {-|
-Check if odd no. of values are true.
+Checks if odd no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xor)
 	-- xor[n] a b ...
 	-- a: 1st boolean
@@ -747,7 +733,7 @@ count4 a b c d + count4 e f g h
 
 -- NAND (VARIABLE)
 {-|
-Check if any value is false.
+Checks if any value is false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nand)
 	-- nand[n] a b ...
 	-- a: 1st boolean
@@ -762,7 +748,7 @@ nand = nand2
 
 
 {-|
-Check if any value is false.
+Checks if any value is false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nand)
 	-- nand[n] a b ...
 	-- a: 1st boolean
@@ -778,7 +764,7 @@ not <| and0
 
 
 {-|
-Check if any value is false.
+Checks if any value is false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nand)
 	-- nand[n] a b ...
 	-- a: 1st boolean
@@ -794,7 +780,7 @@ not <| and1 a
 
 
 {-|
-Check if any value is false.
+Checks if any value is false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nand)
 	-- nand[n] a b ...
 	-- a: 1st boolean
@@ -810,7 +796,7 @@ not <| and2 a b
 
 
 {-|
-Check if any value is false.
+Checks if any value is false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nand)
 	-- nand[n] a b ...
 	-- a: 1st boolean
@@ -826,7 +812,7 @@ not <| and3 a b c
 
 
 {-|
-Check if any value is false.
+Checks if any value is false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nand)
 	-- nand[n] a b ...
 	-- a: 1st boolean
@@ -842,7 +828,7 @@ not <| and4 a b c d
 
 
 {-|
-Check if any value is false.
+Checks if any value is false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nand)
 	-- nand[n] a b ...
 	-- a: 1st boolean
@@ -858,7 +844,7 @@ not <| and5 a b c d e
 
 
 {-|
-Check if any value is false.
+Checks if any value is false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nand)
 	-- nand[n] a b ...
 	-- a: 1st boolean
@@ -874,7 +860,7 @@ not <| and6 a b c d e f
 
 
 {-|
-Check if any value is false.
+Checks if any value is false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nand)
 	-- nand[n] a b ...
 	-- a: 1st boolean
@@ -890,7 +876,7 @@ not <| and7 a b c d e f g
 
 
 {-|
-Check if any value is false.
+Checks if any value is false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nand)
 	-- nand[n] a b ...
 	-- a: 1st boolean
@@ -909,7 +895,7 @@ not <| and8 a b c d e f g h
 
 -- NOR (VARIABLE)
 {-|
-Check if all values are false.
+Checks if all values are false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nor)
 	-- nor[n] a b ...
 	-- a: 1st boolean
@@ -924,7 +910,7 @@ nor = nor2
 
 
 {-|
-Check if all values are false.
+Checks if all values are false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nor)
 	-- nor[n] a b ...
 	-- a: 1st boolean
@@ -940,7 +926,7 @@ not or0
 
 
 {-|
-Check if all values are false.
+Checks if all values are false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nor)
 	-- nor[n] a b ...
 	-- a: 1st boolean
@@ -956,7 +942,7 @@ not <| or1 a
 
 
 {-|
-Check if all values are false.
+Checks if all values are false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nor)
 	-- nor[n] a b ...
 	-- a: 1st boolean
@@ -972,7 +958,7 @@ not <| or2 a b
 
 
 {-|
-Check if all values are false.
+Checks if all values are false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nor)
 	-- nor[n] a b ...
 	-- a: 1st boolean
@@ -988,7 +974,7 @@ not <| or3 a b c
 
 
 {-|
-Check if all values are false.
+Checks if all values are false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nor)
 	-- nor[n] a b ...
 	-- a: 1st boolean
@@ -1004,7 +990,7 @@ not <| or4 a b c d
 
 
 {-|
-Check if all values are false.
+Checks if all values are false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nor)
 	-- nor[n] a b ...
 	-- a: 1st boolean
@@ -1020,7 +1006,7 @@ not <| or5 a b c d e
 
 
 {-|
-Check if all values are false.
+Checks if all values are false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nor)
 	-- nor[n] a b ...
 	-- a: 1st boolean
@@ -1036,7 +1022,7 @@ not <| or6 a b c d e f
 
 
 {-|
-Check if all values are false.
+Checks if all values are false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nor)
 	-- nor[n] a b ...
 	-- a: 1st boolean
@@ -1052,7 +1038,7 @@ not <| or7 a b c d e f g
 
 
 {-|
-Check if all values are false.
+Checks if all values are false.
 [📘](https://github.com/elmw/extra-boolean/wiki/nor)
 	-- nor[n] a b ...
 	-- a: 1st boolean
@@ -1071,7 +1057,7 @@ not <| or8 a b c d e f g h
 
 -- XNOR (VARIABLE)
 {-|
-Check if even no. of values are true.
+Checks if even no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xnor)
 	-- xnor[n] a b ...
 	-- a: 1st boolean
@@ -1086,7 +1072,7 @@ xnor = xnor2
 
 
 {-|
-Check if even no. of values are true.
+Checks if even no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xnor)
 	-- xnor[n] a b ...
 	-- a: 1st boolean
@@ -1102,7 +1088,7 @@ not xor0
 
 
 {-|
-Check if even no. of values are true.
+Checks if even no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xnor)
 	-- xnor[n] a b ...
 	-- a: 1st boolean
@@ -1118,7 +1104,7 @@ not <| xor1 a
 
 
 {-|
-Check if even no. of values are true.
+Checks if even no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xnor)
 	-- xnor[n] a b ...
 	-- a: 1st boolean
@@ -1134,7 +1120,7 @@ not <| xor2 a b
 
 
 {-|
-Check if even no. of values are true.
+Checks if even no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xnor)
 	-- xnor[n] a b ...
 	-- a: 1st boolean
@@ -1150,7 +1136,7 @@ not <| xor3 a b c
 
 
 {-|
-Check if even no. of values are true.
+Checks if even no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xnor)
 	-- xnor[n] a b ...
 	-- a: 1st boolean
@@ -1166,7 +1152,7 @@ not <| xor4 a b c d
 
 
 {-|
-Check if even no. of values are true.
+Checks if even no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xnor)
 	-- xnor[n] a b ...
 	-- a: 1st boolean
@@ -1182,7 +1168,7 @@ not <| xor5 a b c d e
 
 
 {-|
-Check if even no. of values are true.
+Checks if even no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xnor)
 	-- xnor[n] a b ...
 	-- a: 1st boolean
@@ -1198,7 +1184,7 @@ not <| xor6 a b c d e f
 
 
 {-|
-Check if even no. of values are true.
+Checks if even no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xnor)
 	-- xnor[n] a b ...
 	-- a: 1st boolean
@@ -1214,7 +1200,7 @@ not <| xor7 a b c d e f g
 
 
 {-|
-Check if even no. of values are true.
+Checks if even no. of values are true.
 [📘](https://github.com/elmw/extra-boolean/wiki/xnor)
 	-- xnor[n] a b ...
 	-- a: 1st boolean
@@ -1233,7 +1219,7 @@ not <| xor8 a b c d e f g h
 
 -- SELECT (VARIABLE)
 {-|
-Check if ith value is true.
+Checks if ith value is true.
 [📘](https://github.com/elmw/extra-boolean/wiki/select)
 	-- select[n] i a b ...
 	-- i: index
@@ -1249,7 +1235,7 @@ select = select2
 
 
 {-|
-Check if ith value is true.
+Checks if ith value is true.
 [📘](https://github.com/elmw/extra-boolean/wiki/select)
 	-- select[n] i a b ...
 	-- i: index
@@ -1266,7 +1252,7 @@ False
 
 
 {-|
-Check if ith value is true.
+Checks if ith value is true.
 [📘](https://github.com/elmw/extra-boolean/wiki/select)
 	-- select[n] i a b ...
 	-- i: index
@@ -1285,7 +1271,7 @@ case i of
 
 
 {-|
-Check if ith value is true.
+Checks if ith value is true.
 [📘](https://github.com/elmw/extra-boolean/wiki/select)
 	-- select[n] i a b ...
 	-- i: index
@@ -1305,7 +1291,7 @@ case i of
 
 
 {-|
-Check if ith value is true.
+Checks if ith value is true.
 [📘](https://github.com/elmw/extra-boolean/wiki/select)
 	-- select[n] i a b ...
 	-- i: index
@@ -1326,7 +1312,7 @@ case i of
 
 
 {-|
-Check if ith value is true.
+Checks if ith value is true.
 [📘](https://github.com/elmw/extra-boolean/wiki/select)
 	-- select[n] i a b ...
 	-- i: index
@@ -1348,7 +1334,7 @@ case i of
 
 
 {-|
-Check if ith value is true.
+Checks if ith value is true.
 [📘](https://github.com/elmw/extra-boolean/wiki/select)
 	-- select[n] i a b ...
 	-- i: index
@@ -1371,7 +1357,7 @@ case i of
 
 
 {-|
-Check if ith value is true.
+Checks if ith value is true.
 [📘](https://github.com/elmw/extra-boolean/wiki/select)
 	-- select[n] i a b ...
 	-- i: index
@@ -1395,7 +1381,7 @@ case i of
 
 
 {-|
-Check if ith value is true.
+Checks if ith value is true.
 [📘](https://github.com/elmw/extra-boolean/wiki/select)
 	-- select[n] i a b ...
 	-- i: index
@@ -1420,7 +1406,7 @@ case i of
 
 
 {-|
-Check if ith value is true.
+Checks if ith value is true.
 [📘](https://github.com/elmw/extra-boolean/wiki/select)
 	-- select[n] i a b ...
 	-- i: index
@@ -1443,4 +1429,37 @@ case i of
 	6 -> g
 	7 -> h
 	_ -> False
+
+
+
+-- EQV, IMP (SHORTCUTS)
+{-|
+Checks if antecedent ⇔ consequent (a ⇔ b).
+[📘](https://github.com/elmw/extra-boolean/wiki/eqv)
+	-- eqv a b
+	-- a: antecedent
+	-- b: consequent
+	eqv True True   == True
+	eqv False False == True
+	eqv True False  == False
+	eqv False True  == False
+-}
+eqv : Bool -> Bool -> Bool
+eqv = eq
+
+
+{-|
+Checks if antecedent ⇒ consequent (a ⇒ b).
+[📘](https://github.com/elmw/extra-boolean/wiki/imp)
+	-- imp a b
+	-- a: antecedent
+	-- b: consequent
+	imp True True   == True
+	imp False True  == True
+	imp False False == True
+	imp True False  == False
+-}
+imp : Bool -> Bool -> Bool
+imp = imply
+
 */
