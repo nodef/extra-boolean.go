@@ -111,8 +111,8 @@ func Nimply(a bool, b bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  And(true, true)              == true
-//  And(true, false)             == false
+//  And(true, true)               == true
+//  And(true, false)              == false
 //  And4(true, true, true, true)  == true
 //  And4(true, false, true, true) == false
 func And(a bool, b bool) bool {
@@ -126,8 +126,8 @@ func And(a bool, b bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  And(true, true)              == true
-//  And(true, false)             == false
+//  And(true, true)               == true
+//  And(true, false)              == false
 //  And4(true, true, true, true)  == true
 //  And4(true, false, true, true) == false
 func And0() bool {
@@ -141,8 +141,8 @@ func And0() bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  And(true, true)              == true
-//  And(true, false)             == false
+//  And(true, true)               == true
+//  And(true, false)              == false
 //  And4(true, true, true, true)  == true
 //  And4(true, false, true, true) == false
 func And1(a bool) bool {
@@ -156,8 +156,8 @@ func And1(a bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  And(true, true)              == true
-//  And(true, false)             == false
+//  And(true, true)               == true
+//  And(true, false)              == false
 //  And4(true, true, true, true)  == true
 //  And4(true, false, true, true) == false
 func And2(a bool, b bool) bool {
@@ -171,8 +171,8 @@ func And2(a bool, b bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  And(true, true)              == true
-//  And(true, false)             == false
+//  And(true, true)               == true
+//  And(true, false)              == false
 //  And4(true, true, true, true)  == true
 //  And4(true, false, true, true) == false
 func And3(a bool, b bool, c bool) bool {
@@ -186,8 +186,8 @@ func And3(a bool, b bool, c bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  And(true, true)              == true
-//  And(true, false)             == false
+//  And(true, true)               == true
+//  And(true, false)              == false
 //  And4(true, true, true, true)  == true
 //  And4(true, false, true, true) == false
 func And4(a bool, b bool, c bool, d bool) bool {
@@ -201,8 +201,8 @@ func And4(a bool, b bool, c bool, d bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  And(true, true)              == true
-//  And(true, false)             == false
+//  And(true, true)               == true
+//  And(true, false)              == false
 //  And4(true, true, true, true)  == true
 //  And4(true, false, true, true) == false
 func And5(a bool, b bool, c bool, d bool, e bool) bool {
@@ -216,8 +216,8 @@ func And5(a bool, b bool, c bool, d bool, e bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  And(true, true)              == true
-//  And(true, false)             == false
+//  And(true, true)               == true
+//  And(true, false)              == false
 //  And4(true, true, true, true)  == true
 //  And4(true, false, true, true) == false
 func And6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
@@ -231,8 +231,8 @@ func And6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  And(true, true)              == true
-//  And(true, false)             == false
+//  And(true, true)               == true
+//  And(true, false)              == false
 //  And4(true, true, true, true)  == true
 //  And4(true, false, true, true) == false
 func And7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
@@ -246,8 +246,8 @@ func And7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  And(true, true)              == true
-//  And(true, false)             == false
+//  And(true, true)               == true
+//  And(true, false)              == false
 //  And4(true, true, true, true)  == true
 //  And4(true, false, true, true) == false
 func And8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
@@ -263,8 +263,8 @@ func And8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  Or(true, false)                == true
-//  Or(false, false)               == false
+//  Or(true, false)                 == true
+//  Or(false, false)                == false
 //  Or4(false, true, false, true)   == true
 //  Or4(false, false, false, false) == false
 func Or(a bool, b bool) bool {
@@ -278,8 +278,8 @@ func Or(a bool, b bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  Or(true, false)                == true
-//  Or(false, false)               == false
+//  Or(true, false)                 == true
+//  Or(false, false)                == false
 //  Or4(false, true, false, true)   == true
 //  Or4(false, false, false, false) == false
 func Or0() bool {
@@ -293,8 +293,8 @@ func Or0() bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  Or(true, false)                == true
-//  Or(false, false)               == false
+//  Or(true, false)                 == true
+//  Or(false, false)                == false
 //  Or4(false, true, false, true)   == true
 //  Or4(false, false, false, false) == false
 func Or1(a bool) bool {
@@ -308,8 +308,8 @@ func Or1(a bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  Or(true, false)                == true
-//  Or(false, false)               == false
+//  Or(true, false)                 == true
+//  Or(false, false)                == false
 //  Or4(false, true, false, true)   == true
 //  Or4(false, false, false, false) == false
 func Or2(a bool, b bool) bool {
@@ -323,8 +323,8 @@ func Or2(a bool, b bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  Or(true, false)                == true
-//  Or(false, false)               == false
+//  Or(true, false)                 == true
+//  Or(false, false)                == false
 //  Or4(false, true, false, true)   == true
 //  Or4(false, false, false, false) == false
 func Or3(a bool, b bool, c bool) bool {
@@ -338,8 +338,8 @@ func Or3(a bool, b bool, c bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  Or(true, false)                == true
-//  Or(false, false)               == false
+//  Or(true, false)                 == true
+//  Or(false, false)                == false
 //  Or4(false, true, false, true)   == true
 //  Or4(false, false, false, false) == false
 func Or4(a bool, b bool, c bool, d bool) bool {
@@ -353,8 +353,8 @@ func Or4(a bool, b bool, c bool, d bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  Or(true, false)                == true
-//  Or(false, false)               == false
+//  Or(true, false)                 == true
+//  Or(false, false)                == false
 //  Or4(false, true, false, true)   == true
 //  Or4(false, false, false, false) == false
 func Or5(a bool, b bool, c bool, d bool, e bool) bool {
@@ -368,8 +368,8 @@ func Or5(a bool, b bool, c bool, d bool, e bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  Or(true, false)                == true
-//  Or(false, false)               == false
+//  Or(true, false)                 == true
+//  Or(false, false)                == false
 //  Or4(false, true, false, true)   == true
 //  Or4(false, false, false, false) == false
 func Or6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
@@ -383,8 +383,8 @@ func Or6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  Or(true, false)                == true
-//  Or(false, false)               == false
+//  Or(true, false)                 == true
+//  Or(false, false)                == false
 //  Or4(false, true, false, true)   == true
 //  Or4(false, false, false, false) == false
 func Or7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
@@ -398,339 +398,322 @@ func Or7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 //  // b: 2nd boolean
 //
 // Example:
-//  Or(true, false)                == true
-//  Or(false, false)               == false
+//  Or(true, false)                 == true
+//  Or(false, false)                == false
 //  Or4(false, true, false, true)   == true
 //  Or4(false, false, false, false) == false
 func Or8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
 	return a || b || c || d || e || f || g || h
 }
 
+// XOR (VARIABLE)
+
+// Checks if odd no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xor(true, false)              == true
+//  Xor(true, true)               == false
+//  Xor4(true, true, true, false) == true
+//  Xor4(true, true, true, true)  == false
+func Xor(a bool, b bool) bool {
+	return Xor2(a, b)
+}
+
+// Checks if odd no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xor(true, false)              == true
+//  Xor(true, true)               == false
+//  Xor4(true, true, true, false) == true
+//  Xor4(true, true, true, true)  == false
+func Xor0() bool {
+	return false
+}
+
+// Checks if odd no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xor(true, false)              == true
+//  Xor(true, true)               == false
+//  Xor4(true, true, true, false) == true
+//  Xor4(true, true, true, true)  == false
+func Xor1(a bool) bool {
+	return a
+}
+
+// Checks if odd no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xor(true, false)              == true
+//  Xor(true, true)               == false
+//  Xor4(true, true, true, false) == true
+//  Xor4(true, true, true, true)  == false
+func Xor2(a bool, b bool) bool {
+	return a != b
+}
+
+// Checks if odd no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xor(true, false)              == true
+//  Xor(true, true)               == false
+//  Xor4(true, true, true, false) == true
+//  Xor4(true, true, true, true)  == false
+func Xor3(a bool, b bool, c bool) bool {
+	return Xor2(Xor2(a, b), Xor1(c))
+}
+
+// Checks if odd no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xor(true, false)              == true
+//  Xor(true, true)               == false
+//  Xor4(true, true, true, false) == true
+//  Xor4(true, true, true, true)  == false
+func Xor4(a bool, b bool, c bool, d bool) bool {
+	return Xor2(Xor2(a, b), Xor2(c, d))
+}
+
+// Checks if odd no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xor(true, false)              == true
+//  Xor(true, true)               == false
+//  Xor4(true, true, true, false) == true
+//  Xor4(true, true, true, true)  == false
+func Xor5(a bool, b bool, c bool, d bool, e bool) bool {
+	return Xor2(Xor4(a, b, c, d), Xor1(e))
+}
+
+// Checks if odd no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xor(true, false)              == true
+//  Xor(true, true)               == false
+//  Xor4(true, true, true, false) == true
+//  Xor4(true, true, true, true)  == false
+func Xor6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
+	return Xor2(Xor4(a, b, c, d), Xor2(e, f))
+}
+
+// Checks if odd no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xor(true, false)              == true
+//  Xor(true, true)               == false
+//  Xor4(true, true, true, false) == true
+//  Xor4(true, true, true, true)  == false
+func Xor7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
+	return Xor2(Xor4(a, b, c, d), Xor3(e, f, g))
+}
+
+// Checks if odd no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xor(true, false)              == true
+//  Xor(true, true)               == false
+//  Xor4(true, true, true, false) == true
+//  Xor4(true, true, true, true)  == false
+func Xor8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
+	return Xor2(Xor4(a, b, c, d), Xor4(e, f, g, h))
+}
+
+// COUNT (VARIABLE)
+
+// Counts no. of true values.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Count(true, true)                 == 2
+//  Count(true, false)                == 1
+//  Count4(true, true, true, false)   == 3
+//  Count4(false, true, false, false) == 1
+func Count(a bool, b bool) int {
+	return Count2(a, b)
+}
+
+// Counts no. of true values.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Count(true, true)                 == 2
+//  Count(true, false)                == 1
+//  Count4(true, true, true, false)   == 3
+//  Count4(false, true, false, false) == 1
+func Count0() int {
+	return 0
+}
+
+// Counts no. of true values.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Count(true, true)                 == 2
+//  Count(true, false)                == 1
+//  Count4(true, true, true, false)   == 3
+//  Count4(false, true, false, false) == 1
+func Count1(a bool) int {
+	if a {
+		return 1
+	}
+	return 0
+}
+
+// Counts no. of true values.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Count(true, true)                 == 2
+//  Count(true, false)                == 1
+//  Count4(true, true, true, false)   == 3
+//  Count4(false, true, false, false) == 1
+func Count2(a bool, b bool) int {
+	return Count1(a) + Count1(b)
+}
+
+// Counts no. of true values.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Count(true, true)                 == 2
+//  Count(true, false)                == 1
+//  Count4(true, true, true, false)   == 3
+//  Count4(false, true, false, false) == 1
+func Count3(a bool, b bool, c bool) int {
+	return Count2(a, b) + Count1(c)
+}
+
+// Counts no. of true values.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Count(true, true)                 == 2
+//  Count(true, false)                == 1
+//  Count4(true, true, true, false)   == 3
+//  Count4(false, true, false, false) == 1
+func Count4(a bool, b bool, c bool, d bool) int {
+	return Count2(a, b) + Count2(c, d)
+}
+
+// Counts no. of true values.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Count(true, true)                 == 2
+//  Count(true, false)                == 1
+//  Count4(true, true, true, false)   == 3
+//  Count4(false, true, false, false) == 1
+func Count5(a bool, b bool, c bool, d bool, e bool) int {
+	return Count4(a, b, c, d) + Count1(e)
+}
+
+// Counts no. of true values.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Count(true, true)                 == 2
+//  Count(true, false)                == 1
+//  Count4(true, true, true, false)   == 3
+//  Count4(false, true, false, false) == 1
+func Count6(a bool, b bool, c bool, d bool, e bool, f bool) int {
+	return Count4(a, b, c, d) + Count2(e, f)
+}
+
+// Counts no. of true values.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Count(true, true)                 == 2
+//  Count(true, false)                == 1
+//  Count4(true, true, true, false)   == 3
+//  Count4(false, true, false, false) == 1
+func Count7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) int {
+	return Count4(a, b, c, d) + Count3(e, f, g)
+}
+
+// Counts no. of true values.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Count(true, true)                 == 2
+//  Count(true, false)                == 1
+//  Count4(true, true, true, false)   == 3
+//  Count4(false, true, false, false) == 1
+func Count8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) int {
+	return Count4(a, b, c, d) + Count4(e, f, g, h)
+}
+
 /*
-
--- XOR (VARIABLE)
-{-|
-Checks if odd no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xor)
-	-- xor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xor True False            == True
-	xor True True             == False
-	xor4 True True True False == True
-	xor4 True True True True  == False
--}
-xor : Bool -> Bool -> Bool
-xor = xor2
-
-
-{-|
-Checks if odd no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xor)
-	-- xor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xor True False            == True
-	xor True True             == False
-	xor4 True True True False == True
-	xor4 True True True True  == False
--}
-xor0 : Bool
-xor0 =
-False
-
-
-{-|
-Checks if odd no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xor)
-	-- xor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xor True False            == True
-	xor True True             == False
-	xor4 True True True False == True
-	xor4 True True True True  == False
--}
-xor1 : Bool -> Bool
-xor1 a =
-a
-
-
-{-|
-Checks if odd no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xor)
-	-- xor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xor True False            == True
-	xor True True             == False
-	xor4 True True True False == True
-	xor4 True True True True  == False
--}
-xor2 : Bool -> Bool -> Bool
-xor2 = Basics.xor
-
-
-{-|
-Checks if odd no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xor)
-	-- xor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xor True False            == True
-	xor True True             == False
-	xor4 True True True False == True
-	xor4 True True True True  == False
--}
-xor3 : Bool -> Bool -> Bool -> Bool
-xor3 a b c =
-xor2 (xor2 a b) (xor1 c)
-
-
-{-|
-Checks if odd no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xor)
-	-- xor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xor True False            == True
-	xor True True             == False
-	xor4 True True True False == True
-	xor4 True True True True  == False
--}
-xor4 : Bool -> Bool -> Bool -> Bool -> Bool
-xor4 a b c d =
-xor2 (xor2 a b) (xor2 c d)
-
-
-{-|
-Checks if odd no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xor)
-	-- xor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xor True False            == True
-	xor True True             == False
-	xor4 True True True False == True
-	xor4 True True True True  == False
--}
-xor5 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-xor5 a b c d e =
-xor2 (xor4 a b c d) (xor1 e)
-
-
-{-|
-Checks if odd no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xor)
-	-- xor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xor True False            == True
-	xor True True             == False
-	xor4 True True True False == True
-	xor4 True True True True  == False
--}
-xor6 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-xor6 a b c d e f =
-xor2 (xor4 a b c d) (xor2 e f)
-
-
-{-|
-Checks if odd no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xor)
-	-- xor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xor True False            == True
-	xor True True             == False
-	xor4 True True True False == True
-	xor4 True True True True  == False
--}
-xor7 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-xor7 a b c d e f g =
-xor2 (xor4 a b c d) (xor3 e f g)
-
-
-{-|
-Checks if odd no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xor)
-	-- xor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xor True False            == True
-	xor True True             == False
-	xor4 True True True False == True
-	xor4 True True True True  == False
--}
-xor8 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-xor8 a b c d e f g h =
-xor2 (xor4 a b c d) (xor4 e f g h)
-
-
-
-
--- COUNT (VARIABLE)
-{-|
-Count no. of true values.
-[📘](https://github.com/elmw/extra-boolean/wiki/count)
-	-- count[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	count True True               == 2
-	count True False              == 1
-	count4 True True True False   == 3
-	count4 False True False False == 1
--}
-count : Bool -> Bool -> Int
-count = count2
-
-
-{-|
-Count no. of true values.
-[📘](https://github.com/elmw/extra-boolean/wiki/count)
-	-- count[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	count True True               == 2
-	count True False              == 1
-	count4 True True True False   == 3
-	count4 False True False False == 1
--}
-count0 : Int
-count0 =
-0
-
-
-{-|
-Count no. of true values.
-[📘](https://github.com/elmw/extra-boolean/wiki/count)
-	-- count[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	count True True               == 2
-	count True False              == 1
-	count4 True True True False   == 3
-	count4 False True False False == 1
--}
-count1 : Bool -> Int
-count1 a =
-if a then 1 else 0
-
-
-{-|
-Count no. of true values.
-[📘](https://github.com/elmw/extra-boolean/wiki/count)
-	-- count[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	count True True               == 2
-	count True False              == 1
-	count4 True True True False   == 3
-	count4 False True False False == 1
--}
-count2 : Bool -> Bool -> Int
-count2 a b =
-count1 a + count1 b
-
-
-{-|
-Count no. of true values.
-[📘](https://github.com/elmw/extra-boolean/wiki/count)
-	-- count[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	count True True               == 2
-	count True False              == 1
-	count4 True True True False   == 3
-	count4 False True False False == 1
--}
-count3 : Bool -> Bool -> Bool -> Int
-count3 a b c =
-count2 a b + count1 c
-
-
-{-|
-Count no. of true values.
-[📘](https://github.com/elmw/extra-boolean/wiki/count)
-	-- count[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	count True True               == 2
-	count True False              == 1
-	count4 True True True False   == 3
-	count4 False True False False == 1
--}
-count4 : Bool -> Bool -> Bool -> Bool -> Int
-count4 a b c d =
-count2 a b + count2 c d
-
-
-{-|
-Count no. of true values.
-[📘](https://github.com/elmw/extra-boolean/wiki/count)
-	-- count[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	count True True               == 2
-	count True False              == 1
-	count4 True True True False   == 3
-	count4 False True False False == 1
--}
-count5 : Bool -> Bool -> Bool -> Bool -> Bool -> Int
-count5 a b c d e =
-count4 a b c d + count1 e
-
-
-{-|
-Count no. of true values.
-[📘](https://github.com/elmw/extra-boolean/wiki/count)
-	-- count[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	count True True               == 2
-	count True False              == 1
-	count4 True True True False   == 3
-	count4 False True False False == 1
--}
-count6 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Int
-count6 a b c d e f =
-count4 a b c d + count2 e f
-
-
-{-|
-Count no. of true values.
-[📘](https://github.com/elmw/extra-boolean/wiki/count)
-	-- count[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	count True True               == 2
-	count True False              == 1
-	count4 True True True False   == 3
-	count4 False True False False == 1
--}
-count7 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Int
-count7 a b c d e f g =
-count4 a b c d + count3 e f g
-
-
-{-|
-Count no. of true values.
-[📘](https://github.com/elmw/extra-boolean/wiki/count)
-	-- count[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	count True True               == 2
-	count True False              == 1
-	count4 True True True False   == 3
-	count4 False True False False == 1
--}
-count8 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Int
-count8 a b c d e f g h =
-count4 a b c d + count4 e f g h
-
-
-
-
 -- NAND (VARIABLE)
 {-|
 Checks if any value is false.
