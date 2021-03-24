@@ -1,8 +1,9 @@
 // Boolean data type has two possible truth values to represent logic.
 //
-// 📦 Package: https://package.elm-lang.org/packages/elmw/extra-boolean/latest/
-// 📘 Wiki: https://github.com/elmw/extra-boolean/wiki.
-package Boolean
+// 📦 Package: https://pkg.go.dev/github.com/golangf/extra-boolean
+//
+// 📘 Wiki: https://github.com/golangf/extra-boolean/wiki.
+package boolean
 
 import "regexp"
 
