@@ -23,7 +23,7 @@ the other gates? I answer them here.
 
 ```javascript
 import (
-	boolean "github.com/golangf/extra-boolean"
+  boolean "github.com/golangf/extra-boolean"
 )
 
 boolean.Parse("1")
