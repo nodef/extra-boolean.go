@@ -1,8 +1,6 @@
 package boolean
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func ExampleParse_true1() {
 	fmt.Println(Parse("1"))
