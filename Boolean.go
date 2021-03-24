@@ -1017,169 +1017,159 @@ func Nor8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
 	return !Or8(a, b, c, d, e, f, g, h)
 }
 
+// XNOR (VARIABLE)
+
+// Checks if even no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xnor(true, true)                == true
+//  Xnor(false, true)               == false
+//  Xnor4(true, true, false, false) == true
+//  Xnor4(true, true, true, false)  == false
+func Xnor(a bool, b bool) bool {
+	return Xnor2(a, b)
+}
+
+// Checks if even no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xnor(true, true)                == true
+//  Xnor(false, true)               == false
+//  Xnor4(true, true, false, false) == true
+//  Xnor4(true, true, true, false)  == false
+func Xnor0() bool {
+	return !Xor0()
+}
+
+// Checks if even no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xnor(true, true)                == true
+//  Xnor(false, true)               == false
+//  Xnor4(true, true, false, false) == true
+//  Xnor4(true, true, true, false)  == false
+func Xnor1(a bool) bool {
+	return !Xor1(a)
+}
+
+// Checks if even no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xnor(true, true)                == true
+//  Xnor(false, true)               == false
+//  Xnor4(true, true, false, false) == true
+//  Xnor4(true, true, true, false)  == false
+func Xnor2(a bool, b bool) bool {
+	return !Xor2(a, b)
+}
+
+// Checks if even no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xnor(true, true)                == true
+//  Xnor(false, true)               == false
+//  Xnor4(true, true, false, false) == true
+//  Xnor4(true, true, true, false)  == false
+func Xnor3(a bool, b bool, c bool) bool {
+	return !Xor3(a, b, c)
+}
+
+// Checks if even no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xnor(true, true)                == true
+//  Xnor(false, true)               == false
+//  Xnor4(true, true, false, false) == true
+//  Xnor4(true, true, true, false)  == false
+func Xnor4(a bool, b bool, c bool, d bool) bool {
+	return !Xor4(a, b, c, d)
+}
+
+// Checks if even no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xnor(true, true)                == true
+//  Xnor(false, true)               == false
+//  Xnor4(true, true, false, false) == true
+//  Xnor4(true, true, true, false)  == false
+func Xnor5(a bool, b bool, c bool, d bool, e bool) bool {
+	return !Xor5(a, b, c, d, e)
+}
+
+// Checks if even no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xnor(true, true)                == true
+//  Xnor(false, true)               == false
+//  Xnor4(true, true, false, false) == true
+//  Xnor4(true, true, true, false)  == false
+func Xnor6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
+	return !Xor6(a, b, c, d, e, f)
+}
+
+// Checks if even no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xnor(true, true)                == true
+//  Xnor(false, true)               == false
+//  Xnor4(true, true, false, false) == true
+//  Xnor4(true, true, true, false)  == false
+func Xnor7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
+	return !Xor7(a, b, c, d, e, f, g)
+}
+
+// Checks if even no. of values are true.
+//
+// Parameters:
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Xnor(true, true)                == true
+//  Xnor(false, true)               == false
+//  Xnor4(true, true, false, false) == true
+//  Xnor4(true, true, true, false)  == false
+func Xnor8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
+	return !Xor8(a, b, c, d, e, f, g, h)
+}
+
 /*
--- XNOR (VARIABLE)
-{-|
-Checks if even no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xnor)
-	-- xnor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xnor True True              == True
-	xnor False True             == False
-	xnor4 True True False False == True
-	xnor4 True True True False  == False
--}
-xnor : Bool -> Bool -> Bool
-xnor = xnor2
-
-
-{-|
-Checks if even no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xnor)
-	-- xnor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xnor True True              == True
-	xnor False True             == False
-	xnor4 True True False False == True
-	xnor4 True True True False  == False
--}
-xnor0 : Bool
-xnor0 =
-not xor0
-
-
-{-|
-Checks if even no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xnor)
-	-- xnor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xnor True True              == True
-	xnor False True             == False
-	xnor4 True True False False == True
-	xnor4 True True True False  == False
--}
-xnor1 : Bool -> Bool
-xnor1 a =
-not <| xor1 a
-
-
-{-|
-Checks if even no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xnor)
-	-- xnor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xnor True True              == True
-	xnor False True             == False
-	xnor4 True True False False == True
-	xnor4 True True True False  == False
--}
-xnor2 : Bool -> Bool -> Bool
-xnor2 a b =
-not <| xor2 a b
-
-
-{-|
-Checks if even no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xnor)
-	-- xnor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xnor True True              == True
-	xnor False True             == False
-	xnor4 True True False False == True
-	xnor4 True True True False  == False
--}
-xnor3 : Bool -> Bool -> Bool -> Bool
-xnor3 a b c =
-not <| xor3 a b c
-
-
-{-|
-Checks if even no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xnor)
-	-- xnor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xnor True True              == True
-	xnor False True             == False
-	xnor4 True True False False == True
-	xnor4 True True True False  == False
--}
-xnor4 : Bool -> Bool -> Bool -> Bool -> Bool
-xnor4 a b c d =
-not <| xor4 a b c d
-
-
-{-|
-Checks if even no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xnor)
-	-- xnor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xnor True True              == True
-	xnor False True             == False
-	xnor4 True True False False == True
-	xnor4 True True True False  == False
--}
-xnor5 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-xnor5 a b c d e =
-not <| xor5 a b c d e
-
-
-{-|
-Checks if even no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xnor)
-	-- xnor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xnor True True              == True
-	xnor False True             == False
-	xnor4 True True False False == True
-	xnor4 True True True False  == False
--}
-xnor6 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-xnor6 a b c d e f =
-not <| xor6 a b c d e f
-
-
-{-|
-Checks if even no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xnor)
-	-- xnor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xnor True True              == True
-	xnor False True             == False
-	xnor4 True True False False == True
-	xnor4 True True True False  == False
--}
-xnor7 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-xnor7 a b c d e f g =
-not <| xor7 a b c d e f g
-
-
-{-|
-Checks if even no. of values are true.
-[📘](https://github.com/elmw/extra-boolean/wiki/xnor)
-	-- xnor[n] a b ...
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	xnor True True              == True
-	xnor False True             == False
-	xnor4 True True False False == True
-	xnor4 True True True False  == False
--}
-xnor8 : Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-xnor8 a b c d e f g h =
-not <| xor8 a b c d e f g h
-
-
-
-
 -- SELECT (VARIABLE)
 {-|
 Checks if ith value is true.
