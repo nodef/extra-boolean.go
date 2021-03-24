@@ -10,7 +10,7 @@ import "regexp"
 
 // Converts string to boolean.
 //
-// Parameters:
+//  // Parse(s)
 //  // s: a string
 //
 // Example:
@@ -32,7 +32,7 @@ func Parse(s string) bool {
 
 // Checks if value is false.
 //
-// Parameters:
+//  // Not(a, b)
 //  // a: a boolean
 //
 // Example:
@@ -44,7 +44,7 @@ func Not(a bool) bool {
 
 // Checks if antecedent ⇔ consequent (a ⇔ b).
 //
-// Parameters:
+//  // Eq(a, b)
 //  // a: antecedent
 //  // b: consequent
 //
@@ -59,7 +59,7 @@ func Eq(a bool, b bool) bool {
 
 // Checks if antecedent ⇎ consequent (a ⇎ b).
 //
-// Parameters:
+//  // Neq(a, b)
 //  // a: antecedent
 //  // b: consequent
 //
@@ -74,7 +74,7 @@ func Neq(a bool, b bool) bool {
 
 // Checks if antecedent ⇒ consequent (a ⇒ b).
 //
-// Parameters:
+//  // Imply(a, b)
 //  // a: antecedent
 //  // b: consequent
 //
@@ -89,7 +89,7 @@ func Imply(a bool, b bool) bool {
 
 // Checks if antecedent ⇏ consequent (a ⇏ b).
 //
-// Parameters:
+//  // Nimply(a, b)
 //  // a: antecedent
 //  // b: consequent
 //
@@ -106,7 +106,7 @@ func Nimply(a bool, b bool) bool {
 
 // Checks if all values are true.
 //
-// Parameters:
+//  // And[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -121,7 +121,7 @@ func And(a bool, b bool) bool {
 
 // Checks if all values are true.
 //
-// Parameters:
+//  // And[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -136,7 +136,7 @@ func And0() bool {
 
 // Checks if all values are true.
 //
-// Parameters:
+//  // And[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -151,7 +151,7 @@ func And1(a bool) bool {
 
 // Checks if all values are true.
 //
-// Parameters:
+//  // And[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -166,7 +166,7 @@ func And2(a bool, b bool) bool {
 
 // Checks if all values are true.
 //
-// Parameters:
+//  // And[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -181,7 +181,7 @@ func And3(a bool, b bool, c bool) bool {
 
 // Checks if all values are true.
 //
-// Parameters:
+//  // And[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -196,7 +196,7 @@ func And4(a bool, b bool, c bool, d bool) bool {
 
 // Checks if all values are true.
 //
-// Parameters:
+//  // And[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -211,7 +211,7 @@ func And5(a bool, b bool, c bool, d bool, e bool) bool {
 
 // Checks if all values are true.
 //
-// Parameters:
+//  // And[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -226,7 +226,7 @@ func And6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
 
 // Checks if all values are true.
 //
-// Parameters:
+//  // And[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -241,7 +241,7 @@ func And7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 
 // Checks if all values are true.
 //
-// Parameters:
+//  // And[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -258,7 +258,7 @@ func And8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
 
 // Checks if any value is true.
 //
-// Parameters:
+//  // Or[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -273,7 +273,7 @@ func Or(a bool, b bool) bool {
 
 // Checks if any value is true.
 //
-// Parameters:
+//  // Or[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -288,7 +288,7 @@ func Or0() bool {
 
 // Checks if any value is true.
 //
-// Parameters:
+//  // Or[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -303,7 +303,7 @@ func Or1(a bool) bool {
 
 // Checks if any value is true.
 //
-// Parameters:
+//  // Or[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -318,7 +318,7 @@ func Or2(a bool, b bool) bool {
 
 // Checks if any value is true.
 //
-// Parameters:
+//  // Or[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -333,7 +333,7 @@ func Or3(a bool, b bool, c bool) bool {
 
 // Checks if any value is true.
 //
-// Parameters:
+//  // Or[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -348,7 +348,7 @@ func Or4(a bool, b bool, c bool, d bool) bool {
 
 // Checks if any value is true.
 //
-// Parameters:
+//  // Or[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -363,7 +363,7 @@ func Or5(a bool, b bool, c bool, d bool, e bool) bool {
 
 // Checks if any value is true.
 //
-// Parameters:
+//  // Or[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -378,7 +378,7 @@ func Or6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
 
 // Checks if any value is true.
 //
-// Parameters:
+//  // Or[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -393,7 +393,7 @@ func Or7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 
 // Checks if any value is true.
 //
-// Parameters:
+//  // Or[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -410,7 +410,7 @@ func Or8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
 
 // Checks if odd no. of values are true.
 //
-// Parameters:
+//  // Xor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -425,7 +425,7 @@ func Xor(a bool, b bool) bool {
 
 // Checks if odd no. of values are true.
 //
-// Parameters:
+//  // Xor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -440,7 +440,7 @@ func Xor0() bool {
 
 // Checks if odd no. of values are true.
 //
-// Parameters:
+//  // Xor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -455,7 +455,7 @@ func Xor1(a bool) bool {
 
 // Checks if odd no. of values are true.
 //
-// Parameters:
+//  // Xor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -470,7 +470,7 @@ func Xor2(a bool, b bool) bool {
 
 // Checks if odd no. of values are true.
 //
-// Parameters:
+//  // Xor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -485,7 +485,7 @@ func Xor3(a bool, b bool, c bool) bool {
 
 // Checks if odd no. of values are true.
 //
-// Parameters:
+//  // Xor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -500,7 +500,7 @@ func Xor4(a bool, b bool, c bool, d bool) bool {
 
 // Checks if odd no. of values are true.
 //
-// Parameters:
+//  // Xor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -515,7 +515,7 @@ func Xor5(a bool, b bool, c bool, d bool, e bool) bool {
 
 // Checks if odd no. of values are true.
 //
-// Parameters:
+//  // Xor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -530,7 +530,7 @@ func Xor6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
 
 // Checks if odd no. of values are true.
 //
-// Parameters:
+//  // Xor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -545,7 +545,7 @@ func Xor7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 
 // Checks if odd no. of values are true.
 //
-// Parameters:
+//  // Xor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -562,7 +562,7 @@ func Xor8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
 
 // Counts no. of true values.
 //
-// Parameters:
+//  // Count[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -577,7 +577,7 @@ func Count(a bool, b bool) int {
 
 // Counts no. of true values.
 //
-// Parameters:
+//  // Count[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -592,7 +592,7 @@ func Count0() int {
 
 // Counts no. of true values.
 //
-// Parameters:
+//  // Count[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -610,7 +610,7 @@ func Count1(a bool) int {
 
 // Counts no. of true values.
 //
-// Parameters:
+//  // Count[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -625,7 +625,7 @@ func Count2(a bool, b bool) int {
 
 // Counts no. of true values.
 //
-// Parameters:
+//  // Count[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -640,7 +640,7 @@ func Count3(a bool, b bool, c bool) int {
 
 // Counts no. of true values.
 //
-// Parameters:
+//  // Count[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -655,7 +655,7 @@ func Count4(a bool, b bool, c bool, d bool) int {
 
 // Counts no. of true values.
 //
-// Parameters:
+//  // Count[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -670,7 +670,7 @@ func Count5(a bool, b bool, c bool, d bool, e bool) int {
 
 // Counts no. of true values.
 //
-// Parameters:
+//  // Count[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -685,7 +685,7 @@ func Count6(a bool, b bool, c bool, d bool, e bool, f bool) int {
 
 // Counts no. of true values.
 //
-// Parameters:
+//  // Count[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -700,7 +700,7 @@ func Count7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) int {
 
 // Counts no. of true values.
 //
-// Parameters:
+//  // Count[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -717,7 +717,7 @@ func Count8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) int 
 
 // Checks if any value is false.
 //
-// Parameters:
+//  // Nand[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -732,7 +732,7 @@ func Nand(a bool, b bool) bool {
 
 // Checks if any value is false.
 //
-// Parameters:
+//  // Nand[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -747,7 +747,7 @@ func Nand0() bool {
 
 // Checks if any value is false.
 //
-// Parameters:
+//  // Nand[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -762,7 +762,7 @@ func Nand1(a bool) bool {
 
 // Checks if any value is false.
 //
-// Parameters:
+//  // Nand[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -777,7 +777,7 @@ func Nand2(a bool, b bool) bool {
 
 // Checks if any value is false.
 //
-// Parameters:
+//  // Nand[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -792,7 +792,7 @@ func Nand3(a bool, b bool, c bool) bool {
 
 // Checks if any value is false.
 //
-// Parameters:
+//  // Nand[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -807,7 +807,7 @@ func Nand4(a bool, b bool, c bool, d bool) bool {
 
 // Checks if any value is false.
 //
-// Parameters:
+//  // Nand[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -822,7 +822,7 @@ func Nand5(a bool, b bool, c bool, d bool, e bool) bool {
 
 // Checks if any value is false.
 //
-// Parameters:
+//  // Nand[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -837,7 +837,7 @@ func Nand6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
 
 // Checks if any value is false.
 //
-// Parameters:
+//  // Nand[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -852,7 +852,7 @@ func Nand7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 
 // Checks if any value is false.
 //
-// Parameters:
+//  // Nand[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -869,7 +869,7 @@ func Nand8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool 
 
 // Checks if all values are false.
 //
-// Parameters:
+//  // Nor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -884,7 +884,7 @@ func Nor(a bool, b bool) bool {
 
 // Checks if all values are false.
 //
-// Parameters:
+//  // Nor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -899,7 +899,7 @@ func Nor0() bool {
 
 // Checks if all values are false.
 //
-// Parameters:
+//  // Nor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -914,7 +914,7 @@ func Nor1(a bool) bool {
 
 // Checks if all values are false.
 //
-// Parameters:
+//  // Nor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -929,7 +929,7 @@ func Nor2(a bool, b bool) bool {
 
 // Checks if all values are false.
 //
-// Parameters:
+//  // Nor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -944,7 +944,7 @@ func Nor3(a bool, b bool, c bool) bool {
 
 // Checks if all values are false.
 //
-// Parameters:
+//  // Nor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -959,7 +959,7 @@ func Nor4(a bool, b bool, c bool, d bool) bool {
 
 // Checks if all values are false.
 //
-// Parameters:
+//  // Nor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -974,7 +974,7 @@ func Nor5(a bool, b bool, c bool, d bool, e bool) bool {
 
 // Checks if all values are false.
 //
-// Parameters:
+//  // Nor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -989,7 +989,7 @@ func Nor6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
 
 // Checks if all values are false.
 //
-// Parameters:
+//  // Nor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1004,7 +1004,7 @@ func Nor7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 
 // Checks if all values are false.
 //
-// Parameters:
+//  // Nor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1021,7 +1021,7 @@ func Nor8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
 
 // Checks if even no. of values are true.
 //
-// Parameters:
+//  // Xnor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1036,7 +1036,7 @@ func Xnor(a bool, b bool) bool {
 
 // Checks if even no. of values are true.
 //
-// Parameters:
+//  // Xnor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1051,7 +1051,7 @@ func Xnor0() bool {
 
 // Checks if even no. of values are true.
 //
-// Parameters:
+//  // Xnor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1066,7 +1066,7 @@ func Xnor1(a bool) bool {
 
 // Checks if even no. of values are true.
 //
-// Parameters:
+//  // Xnor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1081,7 +1081,7 @@ func Xnor2(a bool, b bool) bool {
 
 // Checks if even no. of values are true.
 //
-// Parameters:
+//  // Xnor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1096,7 +1096,7 @@ func Xnor3(a bool, b bool, c bool) bool {
 
 // Checks if even no. of values are true.
 //
-// Parameters:
+//  // Xnor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1111,7 +1111,7 @@ func Xnor4(a bool, b bool, c bool, d bool) bool {
 
 // Checks if even no. of values are true.
 //
-// Parameters:
+//  // Xnor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1126,7 +1126,7 @@ func Xnor5(a bool, b bool, c bool, d bool, e bool) bool {
 
 // Checks if even no. of values are true.
 //
-// Parameters:
+//  // Xnor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1141,7 +1141,7 @@ func Xnor6(a bool, b bool, c bool, d bool, e bool, f bool) bool {
 
 // Checks if even no. of values are true.
 //
-// Parameters:
+//  // Xnor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1156,7 +1156,7 @@ func Xnor7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 
 // Checks if even no. of values are true.
 //
-// Parameters:
+//  // Xnor[n](a, b, ...)
 //  // a: 1st boolean
 //  // b: 2nd boolean
 //
@@ -1173,7 +1173,7 @@ func Xnor8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool 
 
 // Checks if ith value is true.
 //
-// Parameters:
+//  // Select[n](i, a, b, ...)
 //  // i: index
 //  // a: 1st boolean
 //  // b: 2nd boolean
@@ -1189,7 +1189,7 @@ func Select(i int, a bool, b bool) bool {
 
 // Checks if ith value is true.
 //
-// Parameters:
+//  // Select[n](i, a, b, ...)
 //  // i: index
 //  // a: 1st boolean
 //  // b: 2nd boolean
@@ -1205,7 +1205,7 @@ func Select0(i int) bool {
 
 // Checks if ith value is true.
 //
-// Parameters:
+//  // Select[n](i, a, b, ...)
 //  // i: index
 //  // a: 1st boolean
 //  // b: 2nd boolean
@@ -1226,7 +1226,7 @@ func Select1(i int, a bool) bool {
 
 // Checks if ith value is true.
 //
-// Parameters:
+//  // Select[n](i, a, b, ...)
 //  // i: index
 //  // a: 1st boolean
 //  // b: 2nd boolean
@@ -1249,7 +1249,7 @@ func Select2(i int, a bool, b bool) bool {
 
 // Checks if ith value is true.
 //
-// Parameters:
+//  // Select[n](i, a, b, ...)
 //  // i: index
 //  // a: 1st boolean
 //  // b: 2nd boolean
@@ -1274,7 +1274,7 @@ func Select3(i int, a bool, b bool, c bool) bool {
 
 // Checks if ith value is true.
 //
-// Parameters:
+//  // Select[n](i, a, b, ...)
 //  // i: index
 //  // a: 1st boolean
 //  // b: 2nd boolean
@@ -1301,7 +1301,7 @@ func Select4(i int, a bool, b bool, c bool, d bool) bool {
 
 // Checks if ith value is true.
 //
-// Parameters:
+//  // Select[n](i, a, b, ...)
 //  // i: index
 //  // a: 1st boolean
 //  // b: 2nd boolean
@@ -1330,7 +1330,7 @@ func Select5(i int, a bool, b bool, c bool, d bool, e bool) bool {
 
 // Checks if ith value is true.
 //
-// Parameters:
+//  // Select[n](i, a, b, ...)
 //  // i: index
 //  // a: 1st boolean
 //  // b: 2nd boolean
@@ -1361,7 +1361,7 @@ func Select6(i int, a bool, b bool, c bool, d bool, e bool, f bool) bool {
 
 // Checks if ith value is true.
 //
-// Parameters:
+//  // Select[n](i, a, b, ...)
 //  // i: index
 //  // a: 1st boolean
 //  // b: 2nd boolean
@@ -1394,7 +1394,7 @@ func Select7(i int, a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool
 
 // Checks if ith value is true.
 //
-// Parameters:
+//  // Select[n](i, a, b, ...)
 //  // i: index
 //  // a: 1st boolean
 //  // b: 2nd boolean
@@ -1431,7 +1431,7 @@ func Select8(i int, a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bo
 
 // Checks if antecedent ⇔ consequent (a ⇔ b).
 //
-// Parameters:
+//  // Eqv(a, b)
 //  // a: antecedent
 //  // b: consequent
 //
@@ -1446,7 +1446,7 @@ func Eqv(a bool, b bool) bool {
 
 // Checks if antecedent ⇒ consequent (a ⇒ b).
 //
-// Parameters:
+//  // Imp(a, b)
 //  // a: antecedent
 //  // b: consequent
 //
