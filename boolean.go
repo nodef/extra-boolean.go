@@ -29,6 +29,9 @@ func Parse(s string) bool {
   return f == n
 }
 
+
+
+
 // NOT, EQ, NEQ, IMPLY, NIMPLY (FIXED)
 
 // Checks if value is false.
@@ -42,6 +45,7 @@ func Parse(s string) bool {
 func Not(a bool) bool {
   return !a
 }
+
 
 // Checks if antecedent ⇔ consequent (a ⇔ b).
 //
@@ -58,6 +62,7 @@ func Eq(a bool, b bool) bool {
   return a == b
 }
 
+
 // Checks if antecedent ⇎ consequent (a ⇎ b).
 //
 //   // Neq(a, b)
@@ -72,6 +77,7 @@ func Eq(a bool, b bool) bool {
 func Neq(a bool, b bool) bool {
   return a != b
 }
+
 
 // Checks if antecedent ⇒ consequent (a ⇒ b).
 //
@@ -88,6 +94,7 @@ func Imply(a bool, b bool) bool {
   return !a || b
 }
 
+
 // Checks if antecedent ⇏ consequent (a ⇏ b).
 //
 //   // Nimply(a, b)
@@ -102,6 +109,9 @@ func Imply(a bool, b bool) bool {
 func Nimply(a bool, b bool) bool {
   return !Imply(a, b)
 }
+
+
+
 
 // AND (VARIABLE)
 
@@ -255,6 +265,9 @@ func And8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
   return a && b && c && d && e && f && g && h
 }
 
+
+
+
 // OR (VARIABLE)
 
 // Checks if any value is true.
@@ -407,6 +420,9 @@ func Or8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
   return a || b || c || d || e || f || g || h
 }
 
+
+
+
 // XOR (VARIABLE)
 
 // Checks if odd no. of values are true.
@@ -558,6 +574,9 @@ func Xor7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 func Xor8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
   return Xor2(Xor4(a, b, c, d), Xor4(e, f, g, h))
 }
+
+
+
 
 // COUNT (VARIABLE)
 
@@ -714,6 +733,9 @@ func Count8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) int 
   return Count4(a, b, c, d) + Count4(e, f, g, h)
 }
 
+
+
+
 // NAND (VARIABLE)
 
 // Checks if any value is false.
@@ -865,6 +887,9 @@ func Nand7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 func Nand8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
   return !And8(a, b, c, d, e, f, g, h)
 }
+
+
+
 
 // NOR (VARIABLE)
 
@@ -1018,6 +1043,9 @@ func Nor8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
   return !Or8(a, b, c, d, e, f, g, h)
 }
 
+
+
+
 // XNOR (VARIABLE)
 
 // Checks if even no. of values are true.
@@ -1169,6 +1197,9 @@ func Xnor7(a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
 func Xnor8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
   return !Xor8(a, b, c, d, e, f, g, h)
 }
+
+
+
 
 // SELECT (VARIABLE)
 
@@ -1428,6 +1459,9 @@ func Select8(i int, a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bo
   }
 }
 
+
+
+
 // EQV, IMP (SHORTCUTS)
 
 // Checks if antecedent ⇔ consequent (a ⇔ b).
@@ -1444,6 +1478,7 @@ func Select8(i int, a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bo
 func Eqv(a bool, b bool) bool {
   return Eq(a, b)
 }
+
 
 // Checks if antecedent ⇒ consequent (a ⇒ b).
 //

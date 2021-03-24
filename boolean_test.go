@@ -22,6 +22,9 @@ func ExampleParse() {
   // false
 }
 
+
+
+
 // NOT, EQ, NEQ, IMPLY, NIMPLY (FIXED)
 
 func ExampleNot() {
@@ -31,6 +34,7 @@ func ExampleNot() {
   // true
   // false
 }
+
 
 func ExampleEq() {
   fmt.Println(Eq(true, true))   // true
@@ -44,6 +48,7 @@ func ExampleEq() {
   // false
 }
 
+
 func ExampleNeq() {
   fmt.Println(Neq(true, false))  // true
   fmt.Println(Neq(false, true))  // true
@@ -55,6 +60,7 @@ func ExampleNeq() {
   // false
   // false
 }
+
 
 func ExampleImply() {
   fmt.Println(Imply(true, true))   // true
@@ -68,6 +74,7 @@ func ExampleImply() {
   // false
 }
 
+
 func ExampleNimply() {
   fmt.Println(Nimply(true, false))  // true
   fmt.Println(Nimply(true, true))   // false
@@ -79,6 +86,9 @@ func ExampleNimply() {
   // false
   // false
 }
+
+
+
 
 // AND (VARIABLE)
 
@@ -94,6 +104,9 @@ func ExampleAnd() {
   // false
 }
 
+
+
+
 // OR (VARIABLE)
 
 func ExampleOr() {
@@ -107,6 +120,9 @@ func ExampleOr() {
   // true
   // false
 }
+
+
+
 
 // XOR (VARIABLE)
 
@@ -122,6 +138,9 @@ func ExampleXor() {
   // false
 }
 
+
+
+
 // COUNT (VARIABLE)
 
 func ExampleCount() {
@@ -135,6 +154,9 @@ func ExampleCount() {
   // 3
   // 1
 }
+
+
+
 
 // NAND (VARIABLE)
 
@@ -150,6 +172,9 @@ func ExampleNand() {
   // false
 }
 
+
+
+
 // NOR (VARIABLE)
 
 func ExampleNor() {
@@ -163,6 +188,9 @@ func ExampleNor() {
   // true
   // false
 }
+
+
+
 
 // XNOR (VARIABLE)
 
@@ -185,6 +213,9 @@ func ExampleXnor() {
   // false
 }
 
+
+
+
 // SELECT (VARIABLE)
 
 func ExampleSelect() {
@@ -199,6 +230,9 @@ func ExampleSelect() {
   // false
 }
 
+
+
+
 // EQV, IMP (SHORTCUTS)
 
 func ExampleEqv() {
@@ -212,6 +246,7 @@ func ExampleEqv() {
   // false
   // false
 }
+
 
 // Checks if antecedent ⇒ consequent (a ⇒ b).
 //
@@ -231,6 +266,9 @@ func ExampleImp() {
   // true
   // false
 }
+
+
+
 
 // func TestParse(t *testing.T) {
 //   var a, b bool
