@@ -1,6 +1,6 @@
 [Boolean] data type has two possible truth values to represent logic.<br>
 :package: [GoDev](https://pkg.go.dev/github.com/golangf/extra-boolean),
-:newspaper: [Godoc](https://pkg.go.dev/github.com/golangf/extra-boolean#section-documentation),
+:newspaper: [GoDoc](https://pkg.go.dev/github.com/golangf/extra-boolean#section-documentation),
 :blue_book: [Wiki](https://github.com/golangf/extra-boolean/wiki).
 
 Here is my implementation of digital logic gates in software. That includes
