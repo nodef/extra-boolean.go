@@ -1169,250 +1169,292 @@ func Xnor8(a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool 
 	return !Xor8(a, b, c, d, e, f, g, h)
 }
 
-/*
--- SELECT (VARIABLE)
-{-|
-Checks if ith value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/select)
-	-- select[n] i a b ...
-	-- i: index
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	select 0 True False             == True
-	select 1 True False             == False
-	select4 1 True True False False == True
-	select4 2 True True False False == False
--}
-select : Int -> Bool -> Bool -> Bool
-select = select2
+// SELECT (VARIABLE)
 
+// Checks if ith value is true.
+//
+// Parameters:
+//  // i: index
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Select(0, true, false)               == true
+//  Select(1, true, false)               == false
+//  Select4(1, true, true, false, false) == true
+//  Select4(2, true, true, false, false) == false
+func Select(i int, a bool, b bool) bool {
+	return Select2(i, a, b)
+}
 
-{-|
-Checks if ith value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/select)
-	-- select[n] i a b ...
-	-- i: index
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	select 0 True False             == True
-	select 1 True False             == False
-	select4 1 True True False False == True
-	select4 2 True True False False == False
--}
-select0 : Int -> Bool
-select0 _ =
-False
+// Checks if ith value is true.
+//
+// Parameters:
+//  // i: index
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Select(0, true, false)               == true
+//  Select(1, true, false)               == false
+//  Select4(1, true, true, false, false) == true
+//  Select4(2, true, true, false, false) == false
+func Select0(i int) bool {
+	return false
+}
 
+// Checks if ith value is true.
+//
+// Parameters:
+//  // i: index
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Select(0, true, false)               == true
+//  Select(1, true, false)               == false
+//  Select4(1, true, true, false, false) == true
+//  Select4(2, true, true, false, false) == false
+func Select1(i int, a bool) bool {
+	switch i {
+	case 0:
+		return a
+	default:
+		return false
+	}
+}
 
-{-|
-Checks if ith value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/select)
-	-- select[n] i a b ...
-	-- i: index
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	select 0 True False             == True
-	select 1 True False             == False
-	select4 1 True True False False == True
-	select4 2 True True False False == False
--}
-select1 : Int -> Bool -> Bool
-select1 i a =
-case i of
-	0 -> a
-	_ -> False
+// Checks if ith value is true.
+//
+// Parameters:
+//  // i: index
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Select(0, true, false)               == true
+//  Select(1, true, false)               == false
+//  Select4(1, true, true, false, false) == true
+//  Select4(2, true, true, false, false) == false
+func Select2(i int, a bool, b bool) bool {
+	switch i {
+	case 0:
+		return a
+	case 1:
+		return b
+	default:
+		return false
+	}
+}
 
+// Checks if ith value is true.
+//
+// Parameters:
+//  // i: index
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Select(0, true, false)               == true
+//  Select(1, true, false)               == false
+//  Select4(1, true, true, false, false) == true
+//  Select4(2, true, true, false, false) == false
+func Select3(i int, a bool, b bool, c bool) bool {
+	switch i {
+	case 0:
+		return a
+	case 1:
+		return b
+	case 2:
+		return c
+	default:
+		return false
+	}
+}
 
-{-|
-Checks if ith value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/select)
-	-- select[n] i a b ...
-	-- i: index
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	select 0 True False             == True
-	select 1 True False             == False
-	select4 1 True True False False == True
-	select4 2 True True False False == False
--}
-select2 : Int -> Bool -> Bool -> Bool
-select2 i a b =
-case i of
-	0 -> a
-	1 -> b
-	_ -> False
+// Checks if ith value is true.
+//
+// Parameters:
+//  // i: index
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Select(0, true, false)               == true
+//  Select(1, true, false)               == false
+//  Select4(1, true, true, false, false) == true
+//  Select4(2, true, true, false, false) == false
+func Select4(i int, a bool, b bool, c bool, d bool) bool {
+	switch i {
+	case 0:
+		return a
+	case 1:
+		return b
+	case 2:
+		return c
+	case 3:
+		return d
+	default:
+		return false
+	}
+}
 
+// Checks if ith value is true.
+//
+// Parameters:
+//  // i: index
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Select(0, true, false)               == true
+//  Select(1, true, false)               == false
+//  Select4(1, true, true, false, false) == true
+//  Select4(2, true, true, false, false) == false
+func Select5(i int, a bool, b bool, c bool, d bool, e bool) bool {
+	switch i {
+	case 0:
+		return a
+	case 1:
+		return b
+	case 2:
+		return c
+	case 3:
+		return d
+	case 4:
+		return e
+	default:
+		return false
+	}
+}
 
-{-|
-Checks if ith value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/select)
-	-- select[n] i a b ...
-	-- i: index
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	select 0 True False             == True
-	select 1 True False             == False
-	select4 1 True True False False == True
-	select4 2 True True False False == False
--}
-select3 : Int -> Bool -> Bool -> Bool -> Bool
-select3 i a b c =
-case i of
-	0 -> a
-	1 -> b
-	2 -> c
-	_ -> False
+// Checks if ith value is true.
+//
+// Parameters:
+//  // i: index
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Select(0, true, false)               == true
+//  Select(1, true, false)               == false
+//  Select4(1, true, true, false, false) == true
+//  Select4(2, true, true, false, false) == false
+func Select6(i int, a bool, b bool, c bool, d bool, e bool, f bool) bool {
+	switch i {
+	case 0:
+		return a
+	case 1:
+		return b
+	case 2:
+		return c
+	case 3:
+		return d
+	case 4:
+		return e
+	case 5:
+		return f
+	default:
+		return false
+	}
+}
 
+// Checks if ith value is true.
+//
+// Parameters:
+//  // i: index
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Select(0, true, false)               == true
+//  Select(1, true, false)               == false
+//  Select4(1, true, true, false, false) == true
+//  Select4(2, true, true, false, false) == false
+func Select7(i int, a bool, b bool, c bool, d bool, e bool, f bool, g bool) bool {
+	switch i {
+	case 0:
+		return a
+	case 1:
+		return b
+	case 2:
+		return c
+	case 3:
+		return d
+	case 4:
+		return e
+	case 5:
+		return f
+	case 6:
+		return g
+	default:
+		return false
+	}
+}
 
-{-|
-Checks if ith value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/select)
-	-- select[n] i a b ...
-	-- i: index
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	select 0 True False             == True
-	select 1 True False             == False
-	select4 1 True True False False == True
-	select4 2 True True False False == False
--}
-select4 : Int -> Bool -> Bool -> Bool -> Bool -> Bool
-select4 i a b c d =
-case i of
-	0 -> a
-	1 -> b
-	2 -> c
-	3 -> d
-	_ -> False
+// Checks if ith value is true.
+//
+// Parameters:
+//  // i: index
+//  // a: 1st boolean
+//  // b: 2nd boolean
+//
+// Example:
+//  Select(0, true, false)               == true
+//  Select(1, true, false)               == false
+//  Select4(1, true, true, false, false) == true
+//  Select4(2, true, true, false, false) == false
+func Select8(i int, a bool, b bool, c bool, d bool, e bool, f bool, g bool, h bool) bool {
+	switch i {
+	case 0:
+		return a
+	case 1:
+		return b
+	case 2:
+		return c
+	case 3:
+		return d
+	case 4:
+		return e
+	case 5:
+		return f
+	case 6:
+		return g
+	case 7:
+		return h
+	default:
+		return false
+	}
+}
 
+// EQV, IMP (SHORTCUTS)
 
-{-|
-Checks if ith value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/select)
-	-- select[n] i a b ...
-	-- i: index
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	select 0 True False             == True
-	select 1 True False             == False
-	select4 1 True True False False == True
-	select4 2 True True False False == False
--}
-select5 : Int -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-select5 i a b c d e =
-case i of
-	0 -> a
-	1 -> b
-	2 -> c
-	3 -> d
-	4 -> e
-	_ -> False
+// Checks if antecedent ⇔ consequent (a ⇔ b).
+//
+// Parameters:
+//  // a: antecedent
+//  // b: consequent
+//
+// Example:
+//  Eqv(true, true)   == true
+//  Eqv(false, false) == true
+//  Eqv(true, false)  == false
+//  Eqv(false, true)  == false
+func Eqv(a bool, b bool) bool {
+	return Eq(a, b)
+}
 
-
-{-|
-Checks if ith value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/select)
-	-- select[n] i a b ...
-	-- i: index
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	select 0 True False             == True
-	select 1 True False             == False
-	select4 1 True True False False == True
-	select4 2 True True False False == False
--}
-select6 : Int -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-select6 i a b c d e f =
-case i of
-	0 -> a
-	1 -> b
-	2 -> c
-	3 -> d
-	4 -> e
-	5 -> f
-	_ -> False
-
-
-{-|
-Checks if ith value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/select)
-	-- select[n] i a b ...
-	-- i: index
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	select 0 True False             == True
-	select 1 True False             == False
-	select4 1 True True False False == True
-	select4 2 True True False False == False
--}
-select7 : Int -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-select7 i a b c d e f g =
-case i of
-	0 -> a
-	1 -> b
-	2 -> c
-	3 -> d
-	4 -> e
-	5 -> f
-	6 -> g
-	_ -> False
-
-
-{-|
-Checks if ith value is true.
-[📘](https://github.com/elmw/extra-boolean/wiki/select)
-	-- select[n] i a b ...
-	-- i: index
-	-- a: 1st boolean
-	-- b: 2nd boolean
-	select 0 True False             == True
-	select 1 True False             == False
-	select4 1 True True False False == True
-	select4 2 True True False False == False
--}
-select8 : Int -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool -> Bool
-select8 i a b c d e f g h =
-case i of
-	0 -> a
-	1 -> b
-	2 -> c
-	3 -> d
-	4 -> e
-	5 -> f
-	6 -> g
-	7 -> h
-	_ -> False
-
-
-
--- EQV, IMP (SHORTCUTS)
-{-|
-Checks if antecedent ⇔ consequent (a ⇔ b).
-[📘](https://github.com/elmw/extra-boolean/wiki/eqv)
-	-- eqv a b
-	-- a: antecedent
-	-- b: consequent
-	eqv True True   == True
-	eqv False False == True
-	eqv True False  == False
-	eqv False True  == False
--}
-eqv : Bool -> Bool -> Bool
-eqv = eq
-
-
-{-|
-Checks if antecedent ⇒ consequent (a ⇒ b).
-[📘](https://github.com/elmw/extra-boolean/wiki/imp)
-	-- imp a b
-	-- a: antecedent
-	-- b: consequent
-	imp True True   == True
-	imp False True  == True
-	imp False False == True
-	imp True False  == False
--}
-imp : Bool -> Bool -> Bool
-imp = imply
-
-*/
+// Checks if antecedent ⇒ consequent (a ⇒ b).
+//
+// Parameters:
+//  // a: antecedent
+//  // b: consequent
+//
+// Example:
+//  Imp(true, true)   == true
+//  Imp(false, true)  == true
+//  Imp(false, false) == true
+//  Imp(true, false)  == false
+func Imp(a bool, b bool) bool {
+	return Imply(a, b)
+}
