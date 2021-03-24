@@ -3,7 +3,7 @@
 // 📦 Package: https://pkg.go.dev/github.com/golangf/extra-boolean
 //
 // 📘 Wiki: https://github.com/golangf/extra-boolean/wiki.
-package boolean
+package src
 
 import "regexp"
 
