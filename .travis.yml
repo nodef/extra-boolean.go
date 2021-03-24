@@ -1,0 +1,9 @@
+language: go
+
+install:
+- git clone https://${GITHUB_TOKEN}@github.com/golangf/deploy "$HOME/deploy"
+- chmod 777 "$HOME/deploy/"*.sh
+- bash "$HOME/deploy/install.sh"
+
+script:
+- bash "$HOME/deploy/script.sh"
