@@ -78,6 +78,25 @@ boolean.Count3(true, false, true)
 <br>
 <br>
 
+
+## References
+
+- [GoDoc add newline character](https://stackoverflow.com/q/51641640/1413259)
+- [Indentation is replaced with tabs from spaces on save ...](https://github.com/microsoft/vscode-go/issues/1930)
+- [Testable Examples in Go](https://blog.golang.org/examples)
+- [Godoc: documenting Go code](https://blog.golang.org/godoc)
+- [Optional Parameters in Go?](https://stackoverflow.com/q/2032149/1413259)
+- [Publishing Go Modules](https://blog.golang.org/publishing-go-modules)
+- [Developing and publishing modules](https://golang.org/doc/modules/developing)
+- [Using Go Modules](https://blog.golang.org/using-go-modules)
+- [Naming Conventions in Go: Short but Descriptive](https://betterprogramming.pub/naming-conventions-in-go-short-but-descriptive-1fa7c6d2f32a)
+- [Effective Go](https://golang.org/doc/effective_go)
+- [How to Write Go Code](https://golang.org/doc/code)
+- [Batch Rename](https://marketplace.visualstudio.com/items?itemName=JannisX11.batch-rename-extension)
+
+<br>
+<br>
+
 [![](https://img.youtube.com/vi/6mMK6iSZsAs/maxresdefault.jpg)](https://www.youtube.com/watch?v=6mMK6iSZsAs)
 
 [Boolean]: https://pkg.go.dev/builtin#bool
