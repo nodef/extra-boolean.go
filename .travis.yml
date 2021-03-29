@@ -1,9 +1,10 @@
 language: go
 
 install:
-- git clone https://${GITHUB_TOKEN}@github.com/golangf/deploy "$HOME/deploy"
-- chmod 777 "$HOME/deploy/"*.sh
-- bash "$HOME/deploy/install.sh"
+- go get
+- if [[ "$GITHUB_TOKEN" != "" ]]; then git clone https://${GITHUB_TOKEN}@github.com/golangf/deploy "$HOME/deploy"; fi
+- if [[ -d ~/deploy ]]; then bash "$HOME/deploy/install.sh"; fi
 
 script:
-- bash "$HOME/deploy/script.sh"
+- if [[ ! -d "$HOME/deploy" ]]; then go test -v || exit 1; fi
+- if [[ -d "$HOME/deploy" ]]; then bash "$HOME/deploy/script.sh"; fi
