@@ -1,7 +1,7 @@
 language: go
 
 install:
-- go get
+- export GO111MODULE="on" && go get
 - if [[ "$GITHUB_TOKEN" != "" ]]; then git clone https://${GITHUB_TOKEN}@github.com/golangf/deploy "$HOME/deploy"; fi
 - if [[ -d ~/deploy ]]; then bash "$HOME/deploy/install.sh"; fi
 
