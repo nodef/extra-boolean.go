@@ -98,6 +98,7 @@ boolean.Count3(true, false, true)
 - [Naming Conventions in Go: Short but Descriptive](https://betterprogramming.pub/naming-conventions-in-go-short-but-descriptive-1fa7c6d2f32a)
 - [Effective Go](https://golang.org/doc/effective_go)
 - [How to Write Go Code](https://golang.org/doc/code)
+- [How to fix “go get: warning: modules disabled by GO111MODULE=auto in GOPATH/src”](https://stackoverflow.com/a/59684525/1413259)
 - [Batch Rename](https://marketplace.visualstudio.com/items?itemName=JannisX11.batch-rename-extension)
 
 <br>
